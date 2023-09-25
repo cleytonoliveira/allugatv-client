@@ -4,7 +4,7 @@ import CatalogGateway from "./CatalogGateway";
 
 type Order = {
   orderOption: "name" | "price";
-  order: "asc" | "desc";
+  direction: "asc" | "desc";
 };
 
 export default class CatalogHttpGateway implements CatalogGateway {
@@ -14,7 +14,7 @@ export default class CatalogHttpGateway implements CatalogGateway {
   ) {}
 
   async getProducts(orderBy?: Order): Promise<any> {
-    const direction = orderBy?.order === "asc" ? "asc" : "desc";
+    const direction = orderBy?.direction === "asc" ? "asc" : "desc";
     const orderOption = orderBy?.orderOption === "name" ? "name" : "price";
     const productsData = await this.httpClient.get(
       `${this.baseUrl}/products?orderBy=${orderOption}&order=${direction}`,
