@@ -23,7 +23,7 @@ export default class CatalogHttpGateway implements CatalogGateway {
     for (const productData of productsData) {
       products.push(
         new Product(
-          productData.idProduct,
+          productData.productId,
           productData.name,
           productData.image,
           productData.price,
