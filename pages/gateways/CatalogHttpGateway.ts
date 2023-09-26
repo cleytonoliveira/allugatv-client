@@ -33,4 +33,17 @@ export default class CatalogHttpGateway implements CatalogGateway {
     }
     return products;
   }
+
+  async getProduct(productId: string): Promise<Product> {
+    const productData = await this.httpClient.get(
+      `${this.baseUrl}/products/${productId}`,
+    );
+    return new Product(
+      productData.productId,
+      productData.name,
+      productData.image,
+      productData.price,
+      productData.description,
+    );
+  }
 }
