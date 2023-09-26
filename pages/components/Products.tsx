@@ -3,7 +3,7 @@ import ProductCard from "./ProductCard";
 import Link from "next/link";
 import Product from "../entities/Product";
 import AxiosAdapter from "../infra/AxiosAdapter";
-import CatalogHttpGateway from "../gateways/CatalogHttpGateway";
+import CatalogHttpGateway from "../gateways/catalog/CatalogHttpGateway";
 
 type OrderBy = {
   orderOption: "price" | "name";

@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import AxiosAdapter from "../infra/AxiosAdapter";
-import CatalogHttpGateway from "../gateways/CatalogHttpGateway";
+import CatalogHttpGateway from "../gateways/catalog/CatalogHttpGateway";
 import Product from "../entities/Product";
 import Link from "next/link";
 import { useCartContext } from "../contexts/CartContext";

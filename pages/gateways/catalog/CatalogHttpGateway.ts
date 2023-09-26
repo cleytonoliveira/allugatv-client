@@ -1,5 +1,5 @@
-import Product from "../entities/Product";
-import HttpClient from "../infra/HttpClient";
+import Product from "../../entities/Product";
+import HttpClient from "../../infra/HttpClient";
 import CatalogGateway from "./CatalogGateway";
 
 type Order = {
