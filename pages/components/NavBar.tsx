@@ -14,12 +14,12 @@ export default function NavBar() {
         <ul>
           <li>
             <Link href="/login">
-              <FontAwesomeIcon icon={faUser} />
+              <FontAwesomeIcon icon={faUser} size="xl" />
             </Link>
           </li>
           <li>
             <Link href="/cart">
-              <FontAwesomeIcon icon={faShoppingBag} />
+              <FontAwesomeIcon icon={faShoppingBag} size="xl" />
             </Link>
           </li>
         </ul>

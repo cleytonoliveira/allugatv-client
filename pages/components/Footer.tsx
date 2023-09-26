@@ -9,8 +9,8 @@ export default function Footer() {
     <footer>
       <h3>Allugatv</h3>
       <div>
-        <FontAwesomeIcon icon={faSquareFacebook} />
-        <FontAwesomeIcon icon={faInstagram} />
+        <FontAwesomeIcon icon={faSquareFacebook} size="xl" />
+        <FontAwesomeIcon icon={faInstagram} size="xl" />
       </div>
       <p>© 2023 All rights reserved</p>
     </footer>
