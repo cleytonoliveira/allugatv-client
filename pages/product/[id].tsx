@@ -4,6 +4,7 @@ import AxiosAdapter from "../infra/AxiosAdapter";
 import CatalogHttpGateway from "../gateways/CatalogHttpGateway";
 import Product from "../entities/Product";
 import Link from "next/link";
+import { useCartContext } from "../contexts/CartContext";
 
 export default function ProductDetails() {
   const router = useRouter();
@@ -14,6 +15,7 @@ export default function ProductDetails() {
     image: "",
     price: 0,
   });
+  const { cart, setCart } = useCartContext();
 
   useEffect(() => {
     if (router.query.id) {
@@ -29,6 +31,10 @@ export default function ProductDetails() {
     }
   }, [router.query.id]);
 
+  function handleSubscription() {
+    setCart([...cart, product]);
+  }
+
   return (
     <div>
       <div>
@@ -42,7 +48,7 @@ export default function ProductDetails() {
         <p>R$ {product.price}</p>
         <p>Subscription period: 12 months</p>
         <p>Delivery time: 10 business days</p>
-        <Link href={"/cart"}>
+        <Link href={"/cart"} onClick={handleSubscription}>
           <button>Subscription</button>
         </Link>
       </div>
