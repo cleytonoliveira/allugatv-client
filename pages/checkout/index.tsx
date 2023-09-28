@@ -1,3 +1,5 @@
+import { Button } from "../components/styles/Button.style";
+
 export default function Checkout() {
   return (
     <div>
@@ -47,7 +49,7 @@ export default function Checkout() {
       </div>
       <div>
         <h3>Your cart</h3>
-        <button>COMPLETE ORDER</button>
+        <Button>COMPLETE ORDER</Button>
       </div>
     </div>
   );

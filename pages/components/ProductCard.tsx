@@ -1,3 +1,5 @@
+import { Button } from "./styles/Button.style";
+
 interface ProductCardProps {
   image: string;
   name: string;
@@ -10,7 +12,7 @@ export default function ProductCard({ image, name, price }: ProductCardProps) {
       <img src={image} alt={name} />
       <h2>{name}</h2>
       <p>R$ {price}</p>
-      <button>Get Subscription</button>
+      <Button>Get Subscription</Button>
     </div>
   );
 }

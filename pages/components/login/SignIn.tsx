@@ -2,6 +2,7 @@ import { useState } from "react";
 import UserHttpGateway from "../../gateways/user/UserHttpGateway";
 import AxiosAdapter from "../../infra/AxiosAdapter";
 import { useRouter } from "next/router";
+import { Button } from "../styles/Button.style";
 
 type LoginProps = {
   changeSign: () => void;
@@ -53,13 +54,12 @@ export default function SignIn({ changeSign }: LoginProps) {
           Password
           <input id="password" type="password" onChange={handleChange} />
         </label>
-        <button type="submit">Sign In</button>
-
-        <div>
-          <h3>New user</h3>
-          <button onClick={changeSign}>REGISTER</button>
-        </div>
+        <Button type="submit">Sign In</Button>
       </form>
+      <div>
+        <h3>New user</h3>
+        <Button onClick={changeSign}>REGISTER</Button>
+      </div>
     </div>
   );
 }

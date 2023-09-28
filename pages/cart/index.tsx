@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { useCartContext } from "../contexts/CartContext";
+import { Button } from "../components/styles/Button.style";
 
 export default function Cart() {
   const { cart } = useCartContext();
@@ -14,7 +15,7 @@ export default function Cart() {
         </div>
       ))}
       <Link href="/checkout">
-        <button>Checkout</button>
+        <Button>Checkout</Button>
       </Link>
     </div>
   );

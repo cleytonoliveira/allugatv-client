@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import UserHttpGateway from "../../gateways/user/UserHttpGateway";
 import AxiosAdapter from "../../infra/AxiosAdapter";
 import User from "../../entities/User";
+import { Button } from "../styles/Button.style";
 
 type LoginProps = {
   changeSign: () => void;
@@ -64,12 +65,12 @@ export default function SignUp({ changeSign }: LoginProps) {
           Confirm Password
           <input id="confirmPassword" type="password" onChange={handleChange} />
         </label>
-        <button type="submit">Sign Up</button>
+        <Button type="submit">Sign Up</Button>
       </form>
 
       <div>
         <h3>Are you registered?</h3>
-        <button onClick={changeSign}>LOGIN</button>
+        <Button onClick={changeSign}>LOGIN</Button>
       </div>
     </div>
   );

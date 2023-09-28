@@ -5,6 +5,7 @@ import CatalogHttpGateway from "../gateways/catalog/CatalogHttpGateway";
 import Product from "../entities/Product";
 import Link from "next/link";
 import { useCartContext } from "../contexts/CartContext";
+import { Button } from "../components/styles/Button.style";
 
 export default function ProductDetails() {
   const router = useRouter();
@@ -49,7 +50,7 @@ export default function ProductDetails() {
         <p>Subscription period: 12 months</p>
         <p>Delivery time: 10 business days</p>
         <Link href={"/cart"} onClick={handleSubscription}>
-          <button>Subscription</button>
+          <Button>Subscription</Button>
         </Link>
       </div>
     </div>
