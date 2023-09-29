@@ -1,6 +1,7 @@
 import { useState } from "react";
 import SignIn from "../components/login/SignIn";
 import SignUp from "../components/login/SignUp";
+import { MainPage } from "../styles/MainPage";
 
 export default function Login() {
   const [login, setLogin] = useState(true);
@@ -10,12 +11,12 @@ export default function Login() {
   }
 
   return (
-    <div>
+    <MainPage>
       {login ? (
         <SignIn changeSign={changeSign} />
       ) : (
         <SignUp changeSign={changeSign} />
       )}
-    </div>
+    </MainPage>
   );
 }

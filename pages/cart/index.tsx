@@ -1,12 +1,13 @@
 import Link from "next/link";
 import { useCartContext } from "../contexts/CartContext";
-import { Button } from "../components/styles/Button.style";
+import { Button } from "../styles/Button.style";
+import { MainPage } from "../styles/MainPage";
 
 export default function Cart() {
   const { cart } = useCartContext();
 
   return (
-    <div>
+    <MainPage>
       <h1>Cart</h1>
       {cart.map((product) => (
         <div key={product.id}>
@@ -17,6 +18,6 @@ export default function Cart() {
       <Link href="/checkout">
         <Button>Checkout</Button>
       </Link>
-    </div>
+    </MainPage>
   );
 }

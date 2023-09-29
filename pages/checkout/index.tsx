@@ -1,27 +1,44 @@
-import { Button } from "../components/styles/Button.style";
+import { Button } from "../styles/Button.style";
+import { Input } from "../styles/Input.style";
+import { MainPage } from "../styles/MainPage";
 
 export default function Checkout() {
   return (
-    <div>
+    <MainPage>
       <div>
         <h1>Checkout</h1>
         <div>
           <h3>1. Delivery options</h3>
           <label htmlFor="fullname">
             Full name
-            <input type="text" name="name" id="fullname" autoFocus />
+            <Input
+              type="text"
+              name="name"
+              id="fullname"
+              placeholder="Full Name"
+            />
           </label>
           <label htmlFor="address">
             Address
-            <input type="text" name="address" id="address" />
+            <Input
+              type="text"
+              name="address"
+              id="address"
+              placeholder="Address"
+            />
           </label>
           <label htmlFor="city">
             City
-            <input type="text" name="city" id="city" />
+            <Input type="text" name="city" id="city" placeholder="City" />
           </label>
           <label htmlFor="postal">
             Postal code
-            <input type="text" name="lastname" id="postal" />
+            <Input
+              type="text"
+              name="postal"
+              id="postal"
+              placeholder="Postal code"
+            />
           </label>
         </div>
         <div>
@@ -51,6 +68,6 @@ export default function Checkout() {
         <h3>Your cart</h3>
         <Button>COMPLETE ORDER</Button>
       </div>
-    </div>
+    </MainPage>
   );
 }
