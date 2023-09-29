@@ -2,13 +2,15 @@ import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
 import { faShoppingBag } from "@fortawesome/free-solid-svg-icons";
+import { Header } from "../styles/Header.style";
+import { Menu } from "../styles/Menu.style";
 
 export default function NavBar() {
   return (
-    <header>
-      <nav>
+    <Header>
+      <Menu>
         <Link href="/">
-          <h3>Allugatv</h3>
+          <h3>AllugaTv</h3>
         </Link>
         <Link href="/">Shop</Link>
         <ul>
@@ -23,7 +25,7 @@ export default function NavBar() {
             </Link>
           </li>
         </ul>
-      </nav>
-    </header>
+      </Menu>
+    </Header>
   );
 }
