@@ -1,9 +1,12 @@
 import { useEffect, useMemo, useState } from "react";
 import ProductCard from "./ProductCard";
-import Link from "next/link";
 import Product from "../entities/Product";
 import AxiosAdapter from "../infra/AxiosAdapter";
 import CatalogHttpGateway from "../gateways/catalog/CatalogHttpGateway";
+import { Input } from "../styles/Input.style";
+import { Section } from "../styles/Section.style";
+import { MainPage } from "../styles/MainPage";
+import { Select } from "../styles/Select.style";
 
 type OrderBy = {
   orderOption: "price" | "name";
@@ -82,27 +85,26 @@ export default function Products() {
   }
 
   return (
-    <main>
-      <h1>Products</h1>
-      <input type="text" placeholder="Search" onChange={handleSearchChange} />
-      <select name="order" id="order" onChange={handleOrderChange}>
+    <MainPage>
+      <Input type="text" placeholder="Search" onChange={handleSearchChange} />
+      <Select name="order" id="order" onChange={handleOrderChange}>
         <option value="default">Sort by</option>
         <option value="low-to-high">Price: Low to High</option>
         <option value="high-to-low">Price: High to Low</option>
         <option value="a-to-z">Name: A to Z</option>
         <option value="z-to-a">Name: Z to A</option>
-      </select>
-      <section>
+      </Select>
+      <Section>
         {filteredProducts.map((product: Product, index: number) => (
-          <Link key={index} href={`/product/${product.id}`}>
-            <ProductCard
-              name={product.name}
-              image={product.image}
-              price={product.price}
-            />
-          </Link>
+          <ProductCard
+            key={index}
+            name={product.name}
+            image={product.image}
+            price={product.price}
+            id={product.id}
+          />
         ))}
-      </section>
-    </main>
+      </Section>
+    </MainPage>
   );
 }
