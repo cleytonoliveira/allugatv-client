@@ -5,7 +5,9 @@ import CatalogHttpGateway from "../gateways/catalog/CatalogHttpGateway";
 import Product from "../entities/Product";
 import Link from "next/link";
 import { useCartContext } from "../contexts/CartContext";
-import { Button } from "../components/styles/Button.style";
+import { Button } from "../styles/Button.style";
+import { MainPage } from "../styles/MainPage";
+import { Image } from "../styles/Image.style";
 
 export default function ProductDetails() {
   const router = useRouter();
@@ -37,9 +39,9 @@ export default function ProductDetails() {
   }
 
   return (
-    <div>
+    <MainPage>
       <div>
-        <img src={product.image} alt={product.name} />
+        <Image src={product.image} alt={product.name} />
       </div>
       <div>
         <h1>{product.name}</h1>
@@ -53,6 +55,6 @@ export default function ProductDetails() {
           <Button>Subscription</Button>
         </Link>
       </div>
-    </div>
+    </MainPage>
   );
 }
