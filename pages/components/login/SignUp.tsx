@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import UserHttpGateway from "../../gateways/user/UserHttpGateway";
 import AxiosAdapter from "../../infra/AxiosAdapter";
 import User from "../../entities/User";
-import { Button } from "../styles/Button.style";
+import { Button } from "../../styles/Button.style";
+import { Input } from "../../styles/Input.style";
 
 type LoginProps = {
   changeSign: () => void;
@@ -51,19 +52,39 @@ export default function SignUp({ changeSign }: LoginProps) {
       <form onSubmit={handleRegister}>
         <label htmlFor="fullname">
           Full Name
-          <input id="fullname" type="text" onChange={handleChange} />
+          <Input
+            id="fullname"
+            type="text"
+            onChange={handleChange}
+            placeholder="Full Name"
+          />
         </label>
         <label htmlFor="email">
           Email
-          <input id="email" type="email" onChange={handleChange} />
+          <Input
+            id="email"
+            type="email"
+            onChange={handleChange}
+            placeholder="Email"
+          />
         </label>
         <label htmlFor="password">
           Password
-          <input id="password" type="password" onChange={handleChange} />
+          <Input
+            id="password"
+            type="password"
+            onChange={handleChange}
+            placeholder="Password"
+          />
         </label>
         <label htmlFor="confirmPassword">
           Confirm Password
-          <input id="confirmPassword" type="password" onChange={handleChange} />
+          <Input
+            id="confirmPassword"
+            type="password"
+            onChange={handleChange}
+            placeholder="Confirm your Password"
+          />
         </label>
         <Button type="submit">Sign Up</Button>
       </form>

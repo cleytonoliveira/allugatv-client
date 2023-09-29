@@ -2,7 +2,8 @@ import { useState } from "react";
 import UserHttpGateway from "../../gateways/user/UserHttpGateway";
 import AxiosAdapter from "../../infra/AxiosAdapter";
 import { useRouter } from "next/router";
-import { Button } from "../styles/Button.style";
+import { Button } from "../../styles/Button.style";
+import { Input } from "../../styles/Input.style";
 
 type LoginProps = {
   changeSign: () => void;
@@ -48,11 +49,21 @@ export default function SignIn({ changeSign }: LoginProps) {
       <form onSubmit={handleSubmit}>
         <label htmlFor="email">
           Email
-          <input id="email" type="email" onChange={handleChange} />
+          <Input
+            id="email"
+            type="email"
+            onChange={handleChange}
+            placeholder="Email Address"
+          />
         </label>
         <label htmlFor="password">
           Password
-          <input id="password" type="password" onChange={handleChange} />
+          <Input
+            id="password"
+            type="password"
+            onChange={handleChange}
+            placeholder="Password"
+          />
         </label>
         <Button type="submit">Sign In</Button>
       </form>
